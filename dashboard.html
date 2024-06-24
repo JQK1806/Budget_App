@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Budget App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Budget App</h1>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Dashboard</h2>
+            <div class="overview">
+                <div class="income">
+                    <h3>Total Income</h3>
+                    <p id="totalIncome">$0.00</p>
+                </div>
+                <div class="expenses">
+                    <h3>Total Expenses</h3>
+                    <p id="totalExpenses">$0.00</p>
+                </div>
+                <div class="balance">
+                    <h3>Remaining Balance</h3>
+                    <p id="remainingBalance">$0.00</p>
+                </div>
+            </div>
+            <form id="budgetForm">
+                <h3>Add Transaction</h3>
+                <label for="type">Type:</label>
+                <select id="type" name="type">
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount" required>
+                <label for="category">Category:</label>
+                <input type="text" id="category" name="category" required>
+                <button type="submit">Add</button>
+            </form>
+            <div id="transactions">
+                <h3>Transactions</h3>
+                <ul id="transactionList"></ul>
+            </div>
+            <div id="chartContainer">
+                <canvas id="spendingChart"></canvas>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
